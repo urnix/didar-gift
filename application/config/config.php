@@ -15,8 +15,7 @@
 |
 */
 $config['base_url']	= '';
-$config['base_url'] = "http://" . $_SERVER['HTTP_HOST'] .
-	($_SERVER['HTTP_HOST'] == "localhost" || $_SERVER['HTTP_HOST'] == "127.0.0.1" ? "/gift" : "");
+$config['base_url'] = "http://" . $_SERVER['HTTP_HOST'] . "/gift";
 
 /*
 |--------------------------------------------------------------------------

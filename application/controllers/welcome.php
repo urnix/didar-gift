@@ -1,16 +1,17 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
+	 *        http://example.com/index.php/welcome
+	 *    - or -
+	 *        http://example.com/index.php/welcome/index
+	 *    - or -
+	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -21,6 +22,28 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function products()
+	{
+		$this->load->model('products_model');
+		echo json_encode($this->products_model->get_list());
+		return;
+	}
+
+	public function measures()
+	{
+		$this->load->model('measures_model');
+		echo json_encode($this->measures_model->get_list());
+		return;
+	}
+
+	public function categories()
+	{
+		$this->load->model('categories_model');
+		echo json_encode($this->categories_model->get_list());
+		return;
+	}
+
 }
 
 /* End of file welcome.php */

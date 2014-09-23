@@ -1,9 +1,26 @@
-angular.module('giftApp', []).controller('ProductsCtrl', ['$scope', function ($scope) {
+angular.module('giftApp', ['restangular'])
+    .config(function (RestangularProvider) {
+        RestangularProvider.setBaseUrl('http://localhost/gift/')
+    })
+    .controller('ProductsCtrl', ['$scope', 'Restangular', function ($scope, Restangular) {
+        var EndPoint = Restangular.all('welcome');
 
-    $scope.products = [
-        {name:'Product1', amount: 100},
-        {name:'Product2', amount: 200},
-        {name:'Product3', amount: 300}
-    ];
+        EndPoint.customGET('products').then(function (response) {
+            $scope.products = response;
+        }, function () {
+            alert('err');
+        });
 
-}])
+        EndPoint.customGET('measures').then(function (response) {
+            $scope.measures = response;
+        }, function () {
+            alert('err');
+        });
+
+        EndPoint.customGET('categories').then(function (response) {
+            $scope.categories = response;
+        }, function () {
+            alert('err');
+        });
+
+    }])
