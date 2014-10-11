@@ -1,0 +1,27 @@
+{
+  "name": "gift",
+  "version": "1",
+  "authors": [
+    "Urnix <2urnix@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.25",
+    "angular-ui-router": "~0.2.11",
+    "restangular": "~1.4.0",
+    "bootstrap": "~3.2.0"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.1",
+    "lodash": "~2.4.1"
+  }
+}

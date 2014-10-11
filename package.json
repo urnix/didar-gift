@@ -1,0 +1,19 @@
+{
+  "name": "gift",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://urnix:creat10n@bitbucket.org/urnix/gift.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "wiredep": "^1.8.5"
+  }
+}
