@@ -1,0 +1,10 @@
+<div class="um-container">
+    <div ng-show="!isLogged">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter certificate ID" ng-model="sertId"/>
+            </div>
+        </form>
+    </div>
+    <div class="alert alert-info text-center" ng-show="isLogged">Login successful.</div>
+</div>

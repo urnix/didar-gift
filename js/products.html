@@ -1,10 +1,43 @@
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<div class="um-container">
+    <table class="table text-center">
+        <thead>
+        <tr>
+            <th>Products</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="product in products">
+            <td class="col-md-6">{{product.name}}</td>
+            <td class="col-md-6">{{product.amount}}</td>
+        </tr>
+        </tbody>
+    </table>
 
-<p>Products.html</p>
+    <table class="table text-center">
+        <thead>
+        <tr>
+            <th>Measures</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="measure in measures">
+            <td class="col-md-6">{{measure.name}}</td>
+            <td class="col-md-6">{{measure.desc}}</td>
+        </tr>
+        </tbody>
+    </table>
 
-</body>
-</html>
+    <table class="table text-center">
+        <thead>
+        <tr>
+            <th>Categories</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="category in categories">
+            <td class="col-md-6">{{category.name}}</td>
+            <td class="col-md-6">{{category.desc}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
