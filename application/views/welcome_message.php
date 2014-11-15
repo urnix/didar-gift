@@ -21,6 +21,13 @@
 </head>
 <body>
 
+<!--<span>For debug:</span>-->
+<!--<a ui-sref="login">login</a>-->
+<!--<a ui-sref="products">products</a>-->
+
+<a ng-click="logout()" ng-hide="curStateName()=='login'"><span class="glyphicon glyphicon-off"></span> logout</a>
+
+
 <div ui-view="content"></div>
 
 </body>

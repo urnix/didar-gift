@@ -7,6 +7,7 @@ var storageCheckAuth = function ($q, $state, Restangular) {
     function reject() {
         defered.reject();
         localStorage.removeItem('authToken');
+        Restangular.setDefaultRequestParams({Authorization: null});
         $state.go('login');
     }
 
@@ -53,6 +54,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         responseCheckAuth: function (response) {
             if (response.error == 'not logged') {
                 localStorage.removeItem('authToken');
+                Restangular.setDefaultRequestParams({Authorization: null});
                 $state.go('login');
                 return false;
             }
@@ -65,7 +67,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     function deferredGoProducts() {
         $timeout(function () {
             $state.go('products');
-        }, 1000);
+        }, 500);
     }
 
     function login(token) {
@@ -73,8 +75,9 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             EndPoint.customPOST({sert_identifier: token}, 'login').then(function (response) {
                 if (response.status == 'ok') {
                     var authToken = response.auth_token;
-                    $http.defaults.headers.common.Authorization = 'Bearer ' + authToken;
-                    Restangular.setDefaultHeaders({'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/x-www-form-urlencoded'});
+                    Restangular.setDefaultRequestParams({Authorization: 'Bearer ' + authToken});
+//                    $http.defaults.headers.common.Authorization = 'Bearer ' + authToken;
+//                    Restangular.setDefaultHeaders({'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/x-www-form-urlencoded'});
                     window.localStorage.authToken = authToken;
                     $scope.isLogged = true;
                     deferredGoProducts();
@@ -94,6 +97,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     }
 }]).controller('ProductsCtrl', ['$scope', 'Restangular', 'UtilsSrv', function ($scope, Restangular, UtilsSrv) {
     var EndPoint = Restangular.all('welcome');
+
 
     EndPoint.customGET('products').then(function (response) {
         UtilsSrv.responseCheckAuth(response);
@@ -115,8 +119,19 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     }, function () {
         alert('err');
     });
-}]).run(['$http', 'Restangular', function ($http, Restangular) {
+}]).run(['$rootScope', '$http', '$state', 'Restangular', function ($rootScope, $http, $state, Restangular) {
     var authToken = window.localStorage.authToken;
-    $http.defaults.headers.common.Authorization = 'Bearer ' + authToken;
-    Restangular.setDefaultHeaders({'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/x-www-form-urlencoded'});
+    Restangular.setDefaultRequestParams({Authorization: 'Bearer ' + authToken});
+//    $http.defaults.headers.common.Authorization = 'Bearer ' + authToken;
+//    Restangular.setDefaultHeaders({'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/x-www-form-urlencoded'});
+
+    $rootScope.curStateName = function () {
+        return $state.$current.name;
+    };
+
+    $rootScope.logout = function () {
+        localStorage.removeItem('authToken');
+        Restangular.setDefaultRequestParams({Authorization: null});
+        $state.go('login');
+    };
 }]);

@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS `gift_categories`, `gift_measures`, `gift_products`, `gift_certificates`;
+DROP TABLE IF EXISTS `gift_categories`, `gift_measures`, `gift_products`, `gift_sessions`, `gift_certificates`;
 
 -- phpMyAdmin SQL Dump
 -- version 4.1.4
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 15 2014 г., 03:17
+-- Время создания: Ноя 15 2014 г., 06:00
 -- Версия сервера: 5.6.15-log
 -- Версия PHP: 5.5.8
 
@@ -119,6 +119,7 @@ INSERT INTO `gift_products` (`id`, `name`, `amount`) VALUES
 
 CREATE TABLE IF NOT EXISTS `gift_sessions` (
   `sert_id` int(10) unsigned NOT NULL,
+  `token` varchar(255) NOT NULL,
   `expiration_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   UNIQUE KEY `sert_id` (`sert_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

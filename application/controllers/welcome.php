@@ -49,9 +49,13 @@ class Welcome extends CI_Controller
 
     public function checkAuth()
     {
-        $headers = $this->input->request_headers();
         $this->load->model('sessions_model');
-        if (!isset($headers['Authorization']) || !$this->sessions_model->isActual(substr($headers['Authorization'], 7))) {
+
+//        $headers = $this->input->request_headers();
+//        $authorization = $headers['Authorization'];
+        $authorization = $this->input->get('Authorization');
+
+        if (!isset($authorization) || $authorization == null || empty($authorization) || !$this->sessions_model->isActual(substr($authorization, 7))) {
             echo json_encode(array('error' => 'not logged'));
             die;
         }
