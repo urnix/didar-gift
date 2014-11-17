@@ -1,43 +1,46 @@
+<style>
+    img {
+        height: 100px;
+        width: 150px;
+    }
+</style>
+
+
 <div class="um-container">
-    <table class="table text-center">
-        <thead>
-        <tr>
-            <th translate="products"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="product in products">
-            <td class="col-md-6">{{product.name}}</td>
-            <td class="col-md-6">{{product.amount}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <h4 translate="products"></h4>
 
-    <table class="table text-center">
-        <thead>
-        <tr>
-            <th translate="measures"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="measure in measures">
-            <td class="col-md-6">{{measure.name}}</td>
-            <td class="col-md-6">{{measure.desc}}</td>
-        </tr>
-        </tbody>
-    </table>
+        <div>
+            <div class="col-md-2" ng-repeat="product in products">
+                <img ng-src="{{product.img}}" alt=""/>
+                <!--<span ng-bind="product.name"></span>-->
+                <span ng-bind="product.description"></span>
+            </div>
+        </div>
+    </div>
 
-    <table class="table text-center">
-        <thead>
-        <tr>
-            <th translate="categories"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="category in categories">
-            <td class="col-md-6">{{category.name}}</td>
-            <td class="col-md-6">{{category.desc}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <h4 translate="measures"></h4>
+
+        <div>
+            <div class="col-md-2" ng-repeat="measure in measures">
+                <img ng-src="{{measure.img}}" alt=""/>
+                <!--<span ng-bind="measure.name"></span>-->
+                <span ng-bind="measure.description"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h4 translate="categorys"></h4>
+
+        <div>
+            <div class="col-md-2" ng-repeat="category in categories">
+                <img ng-src="{{category.img}}" alt=""/>
+                <!--<span ng-bind="category.name"></span>-->
+                <span ng-bind="category.description"></span>
+            </div>
+        </div>
+    </div>
+
 </div>
