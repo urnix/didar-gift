@@ -1,4 +1,4 @@
-var myApp = angular.module('giftApp', ['ui.router', 'restangular']);
+var myApp = angular.module('giftApp', ['ui.router', 'restangular', 'pascalprecht.translate']);
 
 var storageCheckAuth = function ($q, $state, Restangular) {
     var defered = $q.defer();
@@ -47,8 +47,26 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             factory: storageCheckAuth
         }
     });
-}).config(function (RestangularProvider) {
-    RestangularProvider.setBaseUrl('/gift')
+}).config(function (RestangularProvider, $translateProvider) {
+    RestangularProvider.setBaseUrl('/gift');
+
+    $translateProvider.translations('en', {
+        'to other language': 'ru',
+        'certificate id': 'Enter \'000003\' // certificate ID',
+        'login successful': 'login successful.',
+        'products': 'Products:',
+        'measures': 'Measures:',
+        'categories': 'Categories:'
+    });
+    $translateProvider.translations('ru', {
+        'to other language': 'en',
+        'certificate id': 'Введите \'000003\' // ID сертификата',
+        'login successful': 'Вход выполнен.',
+        'products': 'Продукты:',
+        'measures': 'Мероприятия:',
+        'categories': 'Категории:'
+    });
+    $translateProvider.preferredLanguage('ru');
 }).factory('UtilsSrv', ['$state', function ($state) {
     return {
         responseCheckAuth: function (response) {
@@ -119,7 +137,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     }, function () {
         alert('err');
     });
-}]).run(['$rootScope', '$http', '$state', 'Restangular', function ($rootScope, $http, $state, Restangular) {
+}]).run(['$rootScope', '$http', '$state', '$translate', 'Restangular', function ($rootScope, $http, $state, $translate, Restangular) {
     var authToken = window.localStorage.authToken;
     Restangular.setDefaultRequestParams({Authorization: 'Bearer ' + authToken});
 //    $http.defaults.headers.common.Authorization = 'Bearer ' + authToken;
@@ -133,5 +151,9 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         localStorage.removeItem('authToken');
         Restangular.setDefaultRequestParams({Authorization: null});
         $state.go('login');
+    };
+
+    $rootScope.changeLang = function () {
+        $translate.use($translate.use() == 'en' ? 'ru' : 'en');
     };
 }]);
