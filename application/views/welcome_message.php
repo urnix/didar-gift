@@ -22,31 +22,18 @@
 
     <style>
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
+        header.navbar {
+            margin-bottom: 0;
         }
 
-        body {
-            min-height: 100%;
-            height: auto !important;
-            height: 100%;
-            position: relative;
+        header.navbar a {
+            color: #333;
         }
-
-        /*.page-wrapper {*/
-        /*position: absolute;*/
-        /*width: 100%;*/
-        /*top: 71px;*/
-        /*bottom: 70px;*/
-        /*}*/
 
         .info-header {
             background: limegreen;
             color: #d8ffbe;
-            padding: 30px 0 40px;
+            padding: 20px 0 40px;
             font-size: 24px;
             margin-bottom: 20px;
         }
@@ -57,10 +44,8 @@
         }
 
         .footer {
-            /*position: absolute;*/
             height: 40px;
             width: 100%;
-            /*bottom: 0;*/
             margin-top: 30px;
             padding: 10px 0;
             background: limegreen;
@@ -77,6 +62,14 @@
             <a class="navbar-brand" href="#/" translate="brand caption"></a>
         </div>
         <nav class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" ng-show="curStateName()!='login'">
+                <li>
+                    <a ui-sref="faq">
+                        <span class="glyphicon glyphicon-paperclip"></span>
+                        <span translate="faq"></span>
+                    </a>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a ng-click="changeLang()" href>
@@ -105,7 +98,7 @@
     </div>
 </div>
 
-<div class="container" ui-view="content"></div>
+<div class="container" ui-view="content" ng-show="loaded"></div>
 <!--</div>-->
 
 <div class="footer" ng-show="loaded && curStateName()!='login'">

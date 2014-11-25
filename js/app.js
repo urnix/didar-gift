@@ -46,6 +46,17 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         resolve: {
             factory: storageCheckAuth
         }
+    }).state('faq', {
+        url: '/faq',
+        views: {
+            'content': {
+                templateUrl: 'js/faq.html',
+                controller: 'FaqCtrl'
+            }
+        },
+        resolve: {
+            factory: storageCheckAuth
+        }
     });
 }).config(function (RestangularProvider, $translateProvider) {
     RestangularProvider.setBaseUrl('/gift');
@@ -53,9 +64,10 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     $translateProvider.translations('en', {
         'brand caption': 'Umasterov Gift',
         'to other language': 'ru',
+        'faq': 'FAQ',
         'all rights reserved': 'All rights reserved!',
         'certificate id': 'Enter certificate ID',
-        'login successful': 'login successful.',
+        'login successful': 'Login successful.',
         'logout': 'Logout',
         'hi pepole': 'Hi, people!',
         'we are the best': 'We are the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best.',
@@ -66,6 +78,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     $translateProvider.translations('ru', {
         'brand caption': 'Umasterov Gift',
         'to other language': 'en',
+        'faq': 'FAQ',
         'all rights reserved': 'Все права защищены!',
         'certificate id': 'Введите ID сертификата',
         'login successful': 'Вход выполнен.',
@@ -176,6 +189,9 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         alert('err');
         loadedCheck();
     });
+}]).controller('FaqCtrl', ['$rootScope', '$scope', '$location', '$stateParams', '$anchorScroll', function ($rootScope, $scope, $location, $stateParams, $anchorScroll) {
+    $anchorScroll();
+    $rootScope.loaded = true;
 }]).run(['$rootScope', '$http', '$state', '$translate', 'Restangular', function ($rootScope, $http, $state, $translate, Restangular) {
     var authToken = window.localStorage.authToken;
     Restangular.setDefaultRequestParams({Authorization: 'Bearer ' + authToken});
