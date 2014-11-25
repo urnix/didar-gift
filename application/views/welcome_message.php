@@ -62,8 +62,8 @@
             <a class="navbar-brand" href="#/" translate="brand caption"></a>
         </div>
         <nav class="collapse navbar-collapse">
-            <ul class="nav navbar-nav" ng-show="curStateName()!='login'">
-                <li>
+            <ul class="nav navbar-nav" ng-show="loaded && curStateName()!='login'">
+            <li>
                     <a ui-sref="faq">
                         <span class="glyphicon glyphicon-paperclip"></span>
                         <span translate="faq"></span>

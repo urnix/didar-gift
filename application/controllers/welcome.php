@@ -69,6 +69,18 @@ class Welcome extends CI_Controller
         return;
     }
 
+    public function product($id)
+    {
+        $this->checkAuth();
+        if ($id) {
+            $this->load->model('products_model');
+            echo json_encode(array('product' => $this->products_model->get_one($id)));
+        } else {
+            echo json_encode(array('error' => 'invalid params'));
+        }
+        return;
+    }
+
     public function measures()
     {
         $this->checkAuth();

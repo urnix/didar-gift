@@ -5,8 +5,15 @@ class Products_model extends CI_Model
 
     public function get_list()
     {
-        $query = $this->db->query("SELECT p.name, p.description, i.path img FROM @products p, @images i, @products_images pi WHERE pi.product_id = p.id AND pi.image_id = i.id AND pi.is_primary = 1 LIMIT 6");
+        $query = $this->db->query("SELECT p.id, p.name, p.description, i.path img FROM @products p, @images i, @products_images pi WHERE pi.product_id = p.id AND pi.image_id = i.id AND pi.is_primary = 1 LIMIT 6");
         return $query->result_array();
+    }
+
+    public function get_one($id)
+    {
+        $query = $this->db->query("SELECT p.id, p.name, p.description, i.path img FROM @products p, @images i, @products_images pi WHERE  pi.product_id = p.id AND pi.image_id = i.id AND pi.is_primary = 1 AND p.id = $id");
+        $result_array = $query->result_array();
+        return $result_array[0];
     }
 
 }
