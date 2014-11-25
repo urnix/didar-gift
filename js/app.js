@@ -51,17 +51,27 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     RestangularProvider.setBaseUrl('/gift');
 
     $translateProvider.translations('en', {
+        'brand caption': 'Umasterov Gift',
         'to other language': 'ru',
-        'certificate id': 'Enter \'000003\' // certificate ID',
+        'all rights reserved': 'All rights reserved!',
+        'certificate id': 'Enter certificate ID',
         'login successful': 'login successful.',
+        'logout': 'Logout',
+        'hi pepole': 'Hi, people!',
+        'we are the best': 'We are the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best.',
         'products': 'Products:',
         'measures': 'Measures:',
         'categories': 'Categories:'
     });
     $translateProvider.translations('ru', {
+        'brand caption': 'Umasterov Gift',
         'to other language': 'en',
-        'certificate id': 'Введите \'000003\' // ID сертификата',
+        'all rights reserved': 'Все права защищены!',
+        'certificate id': 'Введите ID сертификата',
         'login successful': 'Вход выполнен.',
+        'logout': 'Выход',
+        'hi pepole': 'Привет люди!',
+        'we are the best': 'Мы лучшие из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших.',
         'products': 'Продукты:',
         'measures': 'Мероприятия:',
         'categories': 'Категории:'
@@ -78,14 +88,32 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     }
-}]).controller('LoginCtrl', ['$scope', '$http', '$state', '$timeout', 'Restangular', function ($scope, $http, $state, $timeout, Restangular) {
+}]).filter('cut', function () {
+    return function (value, wordwise, max, tail) {
+        if (!value) return '';
+
+        max = parseInt(max, 10);
+        if (!max || value.length <= max) return value;
+
+        value = value.substr(0, max);
+        if (wordwise) {
+            var lastspace = value.lastIndexOf(' ');
+            if (lastspace != -1) {
+                value = value.substr(0, lastspace);
+            }
+        }
+
+        return value + (tail || ' …');
+    };
+}).controller('LoginCtrl', ['$rootScope', '$scope', '$http', '$state', '$timeout', 'Restangular', function ($rootScope, $scope, $http, $state, $timeout, Restangular) {
     var EndPoint = Restangular.all('welcome');
-    $scope.isLogged = false;
+    $rootScope.isLogged = false;
+    $scope.loaded = true;
 
     function deferredGoProducts() {
         $timeout(function () {
             $state.go('products');
-        }, 500);
+        }, 1000);
     }
 
     function login(token) {
@@ -113,29 +141,40 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     if (window.localStorage.authToken) {
         login(window.localStorage.authToken);
     }
-}]).controller('ProductsCtrl', ['$scope', 'Restangular', 'UtilsSrv', function ($scope, Restangular, UtilsSrv) {
+}]).controller('ProductsCtrl', ['$rootScope', '$scope', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, Restangular, UtilsSrv) {
     var EndPoint = Restangular.all('welcome');
 
+    var loadedCheckCount = 3;
+    var loadedCheck = function () {
+        loadedCheckCount--;
+        $rootScope.loaded = !loadedCheckCount;
+    };
 
     EndPoint.customGET('products').then(function (response) {
         UtilsSrv.responseCheckAuth(response);
         $scope.products = response.products;
+        loadedCheck();
     }, function () {
         alert('err');
+        loadedCheck();
     });
 
     EndPoint.customGET('measures').then(function (response) {
         UtilsSrv.responseCheckAuth(response);
         $scope.measures = response.measures;
+        loadedCheck();
     }, function () {
         alert('err');
+        loadedCheck();
     });
 
     EndPoint.customGET('categories').then(function (response) {
         UtilsSrv.responseCheckAuth(response);
         $scope.categories = response.categories;
+        loadedCheck();
     }, function () {
         alert('err');
+        loadedCheck();
     });
 }]).run(['$rootScope', '$http', '$state', '$translate', 'Restangular', function ($rootScope, $http, $state, $translate, Restangular) {
     var authToken = window.localStorage.authToken;

@@ -19,16 +19,98 @@
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="<?php echo base_url(); ?>js/app.js"></script>
     <!--script src="<?php echo base_url(); ?>js/products.js"></script-->
+
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            position: relative;
+        }
+
+        /*.page-wrapper {*/
+        /*position: absolute;*/
+        /*width: 100%;*/
+        /*top: 71px;*/
+        /*bottom: 70px;*/
+        /*}*/
+
+        .info-header {
+            background: limegreen;
+            color: #d8ffbe;
+            padding: 30px 0 40px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .info-header h1 {
+            color: #ffffff;
+            font-size: 60px;
+        }
+
+        .footer {
+            /*position: absolute;*/
+            height: 40px;
+            width: 100%;
+            /*bottom: 0;*/
+            margin-top: 30px;
+            padding: 10px 0;
+            background: limegreen;
+            text-align: right;
+            color: #d8ffbe;
+        }
+    </style>
 </head>
 <body>
 
-<a ng-click="changeLang()"><span class="glyphicon glyphicon-globe"></span><span
-        translate="to other language"></span></a>
+<header class="navbar navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/" translate="brand caption"></a>
+        </div>
+        <nav class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a ng-click="changeLang()" href>
+                        <span class="glyphicon glyphicon-globe"></span>
+                        <span translate="to other language"></span>
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="logout()" href ng-hide="curStateName()=='login'">
+                        <span class="glyphicon glyphicon-off"></span>
+                        <span translate="logout"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-<a ng-click="logout()" ng-hide="curStateName()=='login'"><span class="glyphicon glyphicon-off"></span>
-    <span translate="logout"></span></a>
+<!--<div class="page-wrapper">-->
 
-<div ui-view="content"></div>
+<div class="info-header" ng-show="loaded && curStateName()!='login'">
+    <div class="container">
+        <h1 translate="hi pepole"></h1>
+
+        <p translate="we are the best"></p>
+    </div>
+</div>
+
+<div class="container" ui-view="content"></div>
+<!--</div>-->
+
+<div class="footer" ng-show="loaded && curStateName()!='login'">
+    <div class="container" translate="all rights reserved"></div>
+</div>
 
 </body>
 </html>

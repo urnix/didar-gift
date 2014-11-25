@@ -1,11 +1,31 @@
-<div class="um-container">
-    <div ng-show="!isLogged">
-        <form>
-            <div class="form-group col-md-offset-3 col-md-6">
-                <input type="text" class="form-control" placeholder="{{'certificate id'|translate}}"
-                       ng-model="sertId"/>
-            </div>
-        </form>
-    </div>
+<style>
+    .login-form-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -50px 0 0 -200px;
+        width: 400px;
+    }
+
+    .login-form-container input {
+        font-size: 28px;
+        height: 58px;
+        text-align: center;
+    }
+
+    .login-form-container .alert {
+        background: limegreen;
+        color: #ffffff;
+    }
+</style>
+
+<div class="login-form-container clearfix">
+    <form ng-show="!isLogged">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="{{'certificate id'|translate}}"
+                   ng-model="sertId"/>
+        </div>
+    </form>
     <div class="alert alert-info text-center" ng-show="isLogged" translate="login successful"></div>
 </div>
+
