@@ -46,7 +46,9 @@
     <div class="clearfix">
         <h4 translate="measures"></h4>
 
-        <div class="tag" ng-repeat="measure in product.measures" ng-bind="measure.name"></div>
+        <div class="tag" ng-repeat="measure in product.measures">
+            <a ui-sref="measures.view({id:measure.id})" ng-bind="measure.name"></a>
+        </div>
     </div>
 </div>
 <!--<div class="want-btn-container col-xs-12 text-center">-->

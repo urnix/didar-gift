@@ -9,6 +9,14 @@ class Measures_model extends CI_Model
         return $query->result_array();
     }
 
+    public function get_one($id)
+    {
+        $query = $this->db->query("SELECT c.id, c.name, c.description FROM @measures c WHERE c.id = $id");
+        $result_array = $query->result_array();
+        $measure = $result_array[0];
+        return $measure;
+    }
+
 }
 /* End of file products_model.php */
 /* Location: ./application/models/products_model.php */

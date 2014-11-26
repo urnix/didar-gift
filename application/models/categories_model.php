@@ -11,7 +11,7 @@ class Categories_model extends CI_Model
 
     public function get_one($id)
     {
-        $query = $this->db->query("SELECT c.id, c.name, c.description FROM @categories c WHERE  c.id = $id");
+        $query = $this->db->query("SELECT c.id, c.name, c.description FROM @categories c WHERE c.id = $id");
         $result_array = $query->result_array();
         $category = $result_array[0];
         return $category;

@@ -65,8 +65,9 @@ class Welcome extends CI_Controller
     {
         $this->checkAuth();
         $categoryId = $this->input->get('category_id');
+        $measureId = $this->input->get('measure_id');
         $this->load->model('products_model');
-        echo json_encode(array('products' => $this->products_model->get_list($categoryId)));
+        echo json_encode(array('products' => $this->products_model->get_list($categoryId, $measureId)));
         return;
     }
 
@@ -87,6 +88,18 @@ class Welcome extends CI_Controller
         $this->checkAuth();
         $this->load->model('measures_model');
         echo json_encode(array('measures' => $this->measures_model->get_list()));
+        return;
+    }
+
+    public function measure($id)
+    {
+        $this->checkAuth();
+        if ($id) {
+            $this->load->model('measures_model');
+            echo json_encode(array('measure' => $this->measures_model->get_one($id)));
+        } else {
+            echo json_encode(array('error' => 'invalid params'));
+        }
         return;
     }
 

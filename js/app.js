@@ -99,6 +99,27 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         resolve: {
             factory: storageCheckAuth
         }
+    }).state('measures', {
+        url: '/measures',
+        views: {
+            'content': {
+                templateUrl: 'js/empty.html'
+            }
+        },
+        resolve: {
+            factory: storageCheckAuth
+        }
+    }).state('measures.view', {
+        url: '/view/:id',
+        views: {
+            'content': {
+                controller: 'MeasureViewCtrl',
+                templateUrl: 'js/measure.html'
+            }
+        },
+        resolve: {
+            factory: storageCheckAuth
+        }
     }).state('faq', {
         url: '/faq',
         views: {
@@ -178,7 +199,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 
     function deferredGoProducts() {
         $timeout(function () {
-            $state.go('products.list');
+            $state.go('showcase');
         }, 1000);
     }
 
@@ -289,6 +310,32 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     });
 
     EndPoint.customGET('products', {category_id: $stateParams.id}).then(function (response) {
+        UtilsSrv.responseCheckAuth(response);
+        $scope.products = response.products;
+        loadedCheck();
+    }, function () {
+        alert('err');
+        loadedCheck();
+    });
+}]).controller('MeasureViewCtrl', ['$rootScope', '$scope', '$stateParams', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, $stateParams, Restangular, UtilsSrv) {
+    var EndPoint = Restangular.all('welcome');
+
+    var loadedCheckCount = 2;
+    var loadedCheck = function () {
+        loadedCheckCount--;
+        $rootScope.loaded = !loadedCheckCount;
+    };
+
+    EndPoint.customGET('measure/' + $stateParams.id).then(function (response) {
+        UtilsSrv.responseCheckAuth(response);
+        $scope.measure = response.measure;
+        loadedCheck();
+    }, function () {
+        alert('err');
+        loadedCheck();
+    });
+
+    EndPoint.customGET('products', {measure_id: $stateParams.id}).then(function (response) {
         UtilsSrv.responseCheckAuth(response);
         $scope.products = response.products;
         loadedCheck();

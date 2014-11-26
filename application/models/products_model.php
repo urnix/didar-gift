@@ -3,13 +3,17 @@
 class Products_model extends CI_Model
 {
 
-    public function get_list($categoryId)
+    public function get_list($categoryId, $measureId)
     {
         $extraFrom = "";
         $extraWhere = "";
         if ($categoryId) {
             $extraFrom .= ', @products_categories pc ';
             $extraWhere .= "AND pc.product_id = p.id AND pc.category_id = $categoryId ";
+        }
+        if ($measureId) {
+            $extraFrom .= ', @products_measures pm ';
+            $extraWhere .= "AND pm.product_id = p.id AND pm.measure_id = $measureId ";
         }
         $sql = "SELECT p.id, p.name, p.description, i.path img FROM @products p, @images i, @products_images pi " . $extraFrom . "WHERE pi.product_id = p.id AND pi.image_id = i.id AND pi.is_primary = 1 " . $extraWhere . "LIMIT 6";
         $query = $this->db->query($sql);

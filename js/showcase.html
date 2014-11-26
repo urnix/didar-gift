@@ -85,17 +85,20 @@
         </div>
     </div>
 </div>
-<div class="items-row">
+<div class="items-row margin-bottom-10">
     <h3 translate="measures"></h3>
 
     <div class="clearfix">
-        <div class="item col-xs-6 col-sm-4 col-md-2" ng-repeat="measure in measures">
+        <div class="item col-xs-6 col-sm-4 col-md-2 " ng-repeat="measure in measures">
             <div class="item-image-container">
-                <span class="helper"></span><img class="item-image" ng-src="{{measure.img}}"/>
+                <span class="helper"></span>
+                <a ui-sref="measures.view({id:measure.id})"><img class="item-image" ng-src="{{measure.img}}"/></a>
             </div>
-            <div class="name" ng-bind="measure.name"></div>
-            <div class="description" ng-bind="measure.description | cut:true:55"
-                 title="{{measure.description}}"></div>
+            <div class="name"><a ui-sref="measures.view({id:measure.id})" ng-bind="measure.name"></a></div>
+            <div class="description">
+                <a ui-sref="measures.view({id:measure.id})" ng-bind="measure.description | cut:true:55"
+                   title="{{measure.description}}"></a>
+            </div>
         </div>
     </div>
 </div>
