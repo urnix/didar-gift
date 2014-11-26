@@ -1,0 +1,101 @@
+<style>
+    /*.content-container {*/
+    /*margin: 50px;*/
+    /*}*/
+
+    /*.margin-bottom-10 {*/
+    /*margin-bottom: 10px;*/
+    /*}*/
+
+    .items-row h3 {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .item {
+        padding: 0 5px;
+        color: #333;
+    }
+
+    .item a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .item-image-container {
+        height: 100px;
+        overflow-y: hidden;
+        text-align: center;
+    }
+
+    .item-image-container .helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    .item-image {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .name {
+        text-align: center;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .description {
+        max-height: 51px;
+        font-size: 12px;
+    }
+</style>
+
+<div class="items-row margin-bottom-10">
+    <h3 translate="products"></h3>
+
+    <div class="clearfix">
+        <div class="item col-xs-6 col-sm-4 col-md-2 " ng-repeat="product in products">
+            <div class="item-image-container">
+                <span class="helper"></span>
+                <a ui-sref="products.view({id:product.id})"><img class="item-image" ng-src="{{product.img}}"/></a>
+            </div>
+            <div class="name"><a ui-sref="products.view({id:product.id})" ng-bind="product.name"></a></div>
+            <div class="description">
+                <a ui-sref="products.view({id:product.id})" ng-bind="product.description | cut:true:55"
+                   title="{{product.description}}"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="items-row margin-bottom-10">
+    <h3 translate="categories"></h3>
+
+    <div class="clearfix">
+        <div class="item col-xs-6 col-sm-4 col-md-2 " ng-repeat="category in categories">
+            <div class="item-image-container">
+                <span class="helper"></span><a ui-sref="categories.view({id:category.id})">
+                <img class="item-image" ng-src="{{category.img}}"/></a>
+            </div>
+            <div class="name"><a ui-sref="categorys.view({id:category.id})" ng-bind="category.name"></a></div>
+            <div class="description">
+                <a ui-sref="categorys.view({id:category.id})" ng-bind="category.description | cut:true:55"
+                   title="{{category.description}}"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="items-row">
+    <h3 translate="measures"></h3>
+
+    <div class="clearfix">
+        <div class="item col-xs-6 col-sm-4 col-md-2" ng-repeat="measure in measures">
+            <div class="item-image-container">
+                <span class="helper"></span><img class="item-image" ng-src="{{measure.img}}"/>
+            </div>
+            <div class="name" ng-bind="measure.name"></div>
+            <div class="description" ng-bind="measure.description | cut:true:55"
+                 title="{{measure.description}}"></div>
+        </div>
+    </div>
+</div>

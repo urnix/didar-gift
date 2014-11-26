@@ -20,11 +20,17 @@
         padding: 0 5px;
         color: #d8ffbe;
     }
+
+    .tag a {
+        text-decoration: none;
+        color: #d8ffbe;
+        cursor: pointer;
+    }
 </style>
 
 
 <div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-4">
-<img ng-src="{{product.img}}"/>
+    <img ng-src="{{product.img}}"/>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
     <h3 ng-bind="product.name"></h3>
@@ -33,7 +39,9 @@
     <div class="clearfix">
         <h4 translate="categories"></h4>
 
-        <div class="tag" ng-repeat="category in product.categories" ng-bind="category.name"></div>
+        <div class="tag" ng-repeat="category in product.categories">
+            <a ui-sref="categories.view({id:category.id})" ng-bind="category.name"></a>
+        </div>
     </div>
     <div class="clearfix">
         <h4 translate="measures"></h4>

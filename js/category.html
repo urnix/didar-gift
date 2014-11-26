@@ -1,5 +1,9 @@
 <style>
 
+    h2, h4 {
+        text-align: center;
+    }
+
     .items-row h3 {
         text-align: center;
         margin: 20px 0;
@@ -44,14 +48,19 @@
     }
 </style>
 
+<h2 ng-bind="category.name"></h2>
+<h4 ng-bind="category.description"></h4>
+
 <div class="items-row margin-bottom-10">
-    <h3 translate="products"></h3>
+    <!--<h3 translate="products"></h3>-->
 
     <div class="clearfix">
         <div class="item col-xs-6 col-sm-4 col-md-2 " ng-repeat="product in products">
             <div class="item-image-container">
-                <span class="helper"></span><a ui-sref="products.view({id:product.id})"><img class="item-image"
-                                                                                             ng-src="{{product.img}}"/></a>
+                <span class="helper"></span>
+                <a ui-sref="products.view({id:product.id})">
+                    <img class="item-image" ng-src="{{product.img}}"/>
+                </a>
             </div>
             <div class="name"><a ui-sref="products.view({id:product.id})" ng-bind="product.name"></a></div>
             <div class="description">

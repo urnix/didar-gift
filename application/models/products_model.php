@@ -3,9 +3,16 @@
 class Products_model extends CI_Model
 {
 
-    public function get_list()
+    public function get_list($categoryId)
     {
-        $query = $this->db->query("SELECT p.id, p.name, p.description, i.path img FROM @products p, @images i, @products_images pi WHERE pi.product_id = p.id AND pi.image_id = i.id AND pi.is_primary = 1 LIMIT 6");
+        $extraFrom = "";
+        $extraWhere = "";
+        if ($categoryId) {
+            $extraFrom .= ', @products_categories pc ';
+            $extraWhere .= "AND pc.product_id = p.id AND pc.category_id = $categoryId ";
+        }
+        $sql = "SELECT p.id, p.name, p.description, i.path img FROM @products p, @images i, @products_images pi " . $extraFrom . "WHERE pi.product_id = p.id AND pi.image_id = i.id AND pi.is_primary = 1 " . $extraWhere . "LIMIT 6";
+        $query = $this->db->query($sql);
         return $query->result_array();
     }
 

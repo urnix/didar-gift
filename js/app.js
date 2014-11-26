@@ -25,7 +25,7 @@ var storageCheckAuth = function ($q, $state, Restangular) {
 };
 
 myApp.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/products/list");
+    $urlRouterProvider.otherwise("/showcase");
 
     $stateProvider.state('login', {
         url: '/login',
@@ -34,6 +34,17 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'js/login.html',
                 controller: 'LoginCtrl'
             }
+        }
+    }).state('showcase', {
+        url: '/showcase',
+        views: {
+            'content': {
+                templateUrl: 'js/showcase.html',
+                controller: 'ShowcaseCtrl'
+            }
+        },
+        resolve: {
+            factory: storageCheckAuth
         }
     }).state('products', {
         url: '/products',
@@ -62,6 +73,27 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             'content': {
                 templateUrl: 'js/product.html',
                 controller: 'ProductViewCtrl'
+            }
+        },
+        resolve: {
+            factory: storageCheckAuth
+        }
+    }).state('categories', {
+        url: '/categories',
+        views: {
+            'content': {
+                templateUrl: 'js/empty.html'
+            }
+        },
+        resolve: {
+            factory: storageCheckAuth
+        }
+    }).state('categories.view', {
+        url: '/view/:id',
+        views: {
+            'content': {
+                controller: 'CategoryViewCtrl',
+                templateUrl: 'js/category.html'
             }
         },
         resolve: {
@@ -175,7 +207,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     if (window.localStorage.authToken) {
         login(window.localStorage.authToken);
     }
-}]).controller('ProductsListCtrl', ['$rootScope', '$scope', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, Restangular, UtilsSrv) {
+}]).controller('ShowcaseCtrl', ['$rootScope', '$scope', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, Restangular, UtilsSrv) {
     var EndPoint = Restangular.all('welcome');
 
     var loadedCheckCount = 3;
@@ -210,6 +242,23 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         alert('err');
         loadedCheck();
     });
+}]).controller('ProductsListCtrl', ['$rootScope', '$scope', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, Restangular, UtilsSrv) {
+    var EndPoint = Restangular.all('welcome');
+
+    var loadedCheckCount = 1;
+    var loadedCheck = function () {
+        loadedCheckCount--;
+        $rootScope.loaded = !loadedCheckCount;
+    };
+
+    EndPoint.customGET('products').then(function (response) {
+        UtilsSrv.responseCheckAuth(response);
+        $scope.products = response.products;
+        loadedCheck();
+    }, function () {
+        alert('err');
+        loadedCheck();
+    });
 }]).controller('ProductViewCtrl', ['$rootScope', '$scope', '$stateParams', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, $stateParams, Restangular, UtilsSrv) {
     var EndPoint = Restangular.all('welcome');
 
@@ -220,6 +269,32 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     }, function () {
         alert('err');
         $rootScope.loaded = true;
+    });
+}]).controller('CategoryViewCtrl', ['$rootScope', '$scope', '$stateParams', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, $stateParams, Restangular, UtilsSrv) {
+    var EndPoint = Restangular.all('welcome');
+
+    var loadedCheckCount = 2;
+    var loadedCheck = function () {
+        loadedCheckCount--;
+        $rootScope.loaded = !loadedCheckCount;
+    };
+
+    EndPoint.customGET('category/' + $stateParams.id).then(function (response) {
+        UtilsSrv.responseCheckAuth(response);
+        $scope.category = response.category;
+        loadedCheck();
+    }, function () {
+        alert('err');
+        loadedCheck();
+    });
+
+    EndPoint.customGET('products', {category_id: $stateParams.id}).then(function (response) {
+        UtilsSrv.responseCheckAuth(response);
+        $scope.products = response.products;
+        loadedCheck();
+    }, function () {
+        alert('err');
+        loadedCheck();
     });
 }]).controller('FaqCtrl', ['$rootScope', '$scope', '$location', '$stateParams', '$anchorScroll', function ($rootScope, $scope, $location, $stateParams, $anchorScroll) {
     $anchorScroll();

@@ -64,8 +64,9 @@ class Welcome extends CI_Controller
     public function products()
     {
         $this->checkAuth();
+        $categoryId = $this->input->get('category_id');
         $this->load->model('products_model');
-        echo json_encode(array('products' => $this->products_model->get_list()));
+        echo json_encode(array('products' => $this->products_model->get_list($categoryId)));
         return;
     }
 
@@ -94,6 +95,18 @@ class Welcome extends CI_Controller
         $this->checkAuth();
         $this->load->model('categories_model');
         echo json_encode(array('categories' => $this->categories_model->get_list()));
+        return;
+    }
+
+    public function category($id)
+    {
+        $this->checkAuth();
+        if ($id) {
+            $this->load->model('categories_model');
+            echo json_encode(array('category' => $this->categories_model->get_one($id)));
+        } else {
+            echo json_encode(array('error' => 'invalid params'));
+        }
         return;
     }
 
