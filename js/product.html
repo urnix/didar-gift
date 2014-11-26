@@ -11,16 +11,35 @@
     /*background: inherit;*/
     /*color: #333;*/
     /*}*/
+
+    .tag {
+        float: left;
+        background: limegreen;
+        border-radius: 5px;
+        margin: 0 5px 5px 0;
+        padding: 0 5px;
+        color: #d8ffbe;
+    }
 </style>
 
 
-<div class="col-xs-offset-2 col-xs-4">
-    <img ng-src="{{product.img}}"/>
+<div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-4">
+<img ng-src="{{product.img}}"/>
 </div>
-<div class="col-xs-4">
+<div class="col-xs-12 col-sm-6 col-md-4">
     <h3 ng-bind="product.name"></h3>
 
     <div class="description" ng-bind="product.description"></div>
+    <div class="clearfix">
+        <h4 translate="categories"></h4>
+
+        <div class="tag" ng-repeat="category in product.categories" ng-bind="category.name"></div>
+    </div>
+    <div class="clearfix">
+        <h4 translate="measures"></h4>
+
+        <div class="tag" ng-repeat="measure in product.measures" ng-bind="measure.name"></div>
+    </div>
 </div>
 <!--<div class="want-btn-container col-xs-12 text-center">-->
 <!--<button class="want-btn btn btn-success col-xs-offset-4 col-xs-4">Хочу!</button>-->

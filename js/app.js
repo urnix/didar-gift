@@ -146,7 +146,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 
     function deferredGoProducts() {
         $timeout(function () {
-            $state.go('products');
+            $state.go('products.list');
         }, 1000);
     }
 

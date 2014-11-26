@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS `gift_categories`, `gift_measures`, `gift_products_images`, `gift_products`, `gift_sessions`, `gift_certificates`, `gift_images`;
+DROP TABLE IF EXISTS `gift_products_categories`, `gift_categories`, `gift_products_measures`, `gift_measures`, `gift_products_images`, `gift_products`, `gift_sessions`, `gift_certificates`, `gift_images`;
 
 -- phpMyAdmin SQL Dump
 -- version 4.1.4
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 25 2014 г., 08:00
+-- Время создания: Ноя 26 2014 г., 10:28
 -- Версия сервера: 5.6.15-log
 -- Версия PHP: 5.5.8
 
@@ -116,9 +116,9 @@ INSERT INTO `gift_images` (`id`, `path`) VALUES
 
 CREATE TABLE IF NOT EXISTS `gift_measures` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `image_id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
+  `image_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_MES_IMAGE` (`image_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
@@ -127,13 +127,13 @@ CREATE TABLE IF NOT EXISTS `gift_measures` (
 -- Дамп данных таблицы `gift_measures`
 --
 
-INSERT INTO `gift_measures` (`id`, `image_id`, `name`, `description`) VALUES
-(4, 13, 'Новый год', 'Праздник, отмечаемый многими народами в соответствии с принятым календарём, наступающий в момент перехода с последнего дня года в первый день следующего года.'),
-(5, 14, 'Свадьба', 'Oбряды, сопровождающие заключение брака.'),
-(6, 15, 'День рождения', 'День года, в который родился тот или иной человек.'),
-(7, 15, 'День рождения', 'День года, в который родился тот или иной человек.'),
-(8, 15, 'День рождения', 'День года, в который родился тот или иной человек.'),
-(9, 15, 'День рождения', 'День года, в который родился тот или иной человек.');
+INSERT INTO `gift_measures` (`id`, `name`, `description`, `image_id`) VALUES
+(4, 'Новый год', 'Праздник, отмечаемый многими народами в соответствии с принятым календарём, наступающий в момент перехода с последнего дня года в первый день следующего года.', 13),
+(5, 'Свадьба', 'Oбряды, сопровождающие заключение брака.', 14),
+(6, 'День рождения', 'День года, в который родился тот или иной человек.', 15),
+(7, 'День рождения', 'День года, в который родился тот или иной человек.', 15),
+(8, 'День рождения', 'День года, в который родился тот или иной человек.', 15),
+(9, 'День рождения', 'День года, в который родился тот или иной человек.', 15);
 
 -- --------------------------------------------------------
 
@@ -165,17 +165,43 @@ INSERT INTO `gift_products` (`id`, `name`, `description`, `price`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `gift_products_categories`
+--
+
+CREATE TABLE IF NOT EXISTS `gift_products_categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `product_id` int(10) unsigned NOT NULL,
+  `category_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_PC_PRODUCT` (`product_id`),
+  KEY `FK_PC_CATEGORY` (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Дамп данных таблицы `gift_products_categories`
+--
+
+INSERT INTO `gift_products_categories` (`id`, `product_id`, `category_id`) VALUES
+(1, 1, 4),
+(2, 1, 5),
+(3, 2, 4),
+(4, 2, 5),
+(5, 2, 6);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `gift_products_images`
 --
 
 CREATE TABLE IF NOT EXISTS `gift_products_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `product_id` int(10) unsigned NOT NULL,
   `image_id` int(10) unsigned NOT NULL,
   `is_primary` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  KEY `FK_PRODUCT` (`product_id`),
-  KEY `FK_IMAGE` (`image_id`)
+  KEY `FK_IMAGE` (`image_id`),
+  KEY `FK_PI_PRODUCT` (`product_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
@@ -189,6 +215,32 @@ INSERT INTO `gift_products_images` (`id`, `product_id`, `image_id`, `is_primary`
 (4, 4, 2, 1),
 (5, 5, 2, 1),
 (6, 6, 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `gift_products_measures`
+--
+
+CREATE TABLE IF NOT EXISTS `gift_products_measures` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `product_id` int(10) unsigned NOT NULL,
+  `measure_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_PM_PRODUCT` (`product_id`),
+  KEY `FK_PM_MEASURE` (`measure_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Дамп данных таблицы `gift_products_measures`
+--
+
+INSERT INTO `gift_products_measures` (`id`, `product_id`, `measure_id`) VALUES
+(1, 1, 4),
+(2, 1, 5),
+(3, 1, 6),
+(4, 2, 4),
+(5, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -208,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `gift_sessions` (
 --
 
 INSERT INTO `gift_sessions` (`sert_id`, `token`, `expiration_time`) VALUES
-(1, 'nAwW5G', '2014-11-25 07:15:02');
+(1, 'EXizFw', '2014-11-26 09:42:43');
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -227,11 +279,25 @@ ALTER TABLE `gift_measures`
   ADD CONSTRAINT `FK_MES_IMAGE` FOREIGN KEY (`image_id`) REFERENCES `gift_images` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
+-- Ограничения внешнего ключа таблицы `gift_products_categories`
+--
+ALTER TABLE `gift_products_categories`
+  ADD CONSTRAINT `FK_PC_CATEGORY` FOREIGN KEY (`category_id`) REFERENCES `gift_categories` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_PC_PRODUCT` FOREIGN KEY (`product_id`) REFERENCES `gift_products` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
 -- Ограничения внешнего ключа таблицы `gift_products_images`
 --
 ALTER TABLE `gift_products_images`
-  ADD CONSTRAINT `FK_PI_IMAGE` FOREIGN KEY (`image_id`) REFERENCES `gift_images` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_PRODUCT` FOREIGN KEY (`product_id`) REFERENCES `gift_products` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_PI_PRODUCT` FOREIGN KEY (`product_id`) REFERENCES `gift_products` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_PI_IMAGE` FOREIGN KEY (`image_id`) REFERENCES `gift_images` (`id`) ON DELETE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `gift_products_measures`
+--
+ALTER TABLE `gift_products_measures`
+  ADD CONSTRAINT `FK_PM_MEASURE` FOREIGN KEY (`measure_id`) REFERENCES `gift_measures` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_PM_PRODUCT` FOREIGN KEY (`product_id`) REFERENCES `gift_products` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Ограничения внешнего ключа таблицы `gift_sessions`

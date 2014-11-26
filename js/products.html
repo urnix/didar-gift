@@ -55,8 +55,8 @@
     <h3 translate="products"></h3>
 
     <div class="clearfix">
-        <div class="item col-xs-4 col-md-2 " ng-repeat="product in products">
-            <div class="item-image-container">
+        <div class="item col-xs-6 col-sm-4 col-md-2 " ng-repeat="product in products">
+        <div class="item-image-container">
                 <span class="helper"></span><a ui-sref="products.view({id:product.id})"><img class="item-image"
                                                                                              ng-src="{{product.img}}"/></a>
             </div>
@@ -72,8 +72,8 @@
     <h3 translate="categories"></h3>
 
     <div class="clearfix">
-        <div class="item col-xs-4 col-md-2" ng-repeat="category in categories">
-            <div class="item-image-container">
+        <div class="item col-xs-6 col-sm-4 col-md-2" ng-repeat="category in categories">
+        <div class="item-image-container">
                 <span class="helper"></span><img class="item-image" ng-src="{{category.img}}"/>
             </div>
             <div class="name" ng-bind="category.name"></div>
@@ -86,8 +86,8 @@
     <h3 translate="measures"></h3>
 
     <div class="clearfix">
-        <div class="item col-xs-4 col-md-2" ng-repeat="measure in measures">
-            <div class="item-image-container">
+        <div class="item col-xs-6 col-sm-4 col-md-2" ng-repeat="measure in measures">
+        <div class="item-image-container">
                 <span class="helper"></span><img class="item-image" ng-src="{{measure.img}}"/>
             </div>
             <div class="name" ng-bind="measure.name"></div>

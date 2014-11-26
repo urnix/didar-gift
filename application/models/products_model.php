@@ -13,7 +13,12 @@ class Products_model extends CI_Model
     {
         $query = $this->db->query("SELECT p.id, p.name, p.description, i.path img FROM @products p, @images i, @products_images pi WHERE  pi.product_id = p.id AND pi.image_id = i.id AND pi.is_primary = 1 AND p.id = $id");
         $result_array = $query->result_array();
-        return $result_array[0];
+        $product = $result_array[0];
+        $catQuery = $this->db->query("SELECT c.id, c.name FROM @categories c, @products_categories pc WHERE pc.product_id = $id AND pc.category_id = c.id");
+        $product['categories'] = $catQuery->result_array();
+        $catQuery = $this->db->query("SELECT m.id, m.name FROM @measures m, @products_measures pm WHERE pm.product_id = $id AND pm.measure_id = m.id");
+        $product['measures'] = $catQuery->result_array();
+        return $product;
     }
 
 }
