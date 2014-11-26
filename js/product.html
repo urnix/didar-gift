@@ -1,31 +1,8 @@
 <style>
-    /*.want-btn-container {*/
-    /*margin-top: 20px;*/
-    /*}*/
-
-    /*.want-btn {*/
-    /*background: limegreen;*/
-    /*}*/
-
-    /*.want-btn:hover {*/
-    /*background: inherit;*/
-    /*color: #333;*/
-    /*}*/
-
-    .tag {
-        float: left;
-        background: limegreen;
-        border-radius: 5px;
-        margin: 0 5px 5px 0;
-        padding: 0 5px;
-        color: #d8ffbe;
+    .want-btn-container {
+        margin-top: 20px;
     }
 
-    .tag a {
-        text-decoration: none;
-        color: #d8ffbe;
-        cursor: pointer;
-    }
 </style>
 
 
@@ -51,6 +28,9 @@
         </div>
     </div>
 </div>
-<!--<div class="want-btn-container col-xs-12 text-center">-->
-<!--<button class="want-btn btn btn-success col-xs-offset-4 col-xs-4">Хочу!</button>-->
-<!--</div>-->
+<div class="want-btn-container col-xs-12 text-center">
+    <button class="gs-btn btn btn-success col-xs-offset-4 col-xs-4" ng-click="go('order', {product_id:product.id})"
+            ng-disabled="spent">
+        Хочу!
+    </button>
+</div>

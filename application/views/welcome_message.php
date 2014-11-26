@@ -52,6 +52,75 @@
             text-align: right;
             color: #d8ffbe;
         }
+
+        .items-row h3 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .item {
+            padding: 0 5px;
+            color: #333;
+        }
+
+        .item a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .item-image-container {
+            height: 100px;
+            overflow-x: hidden;
+            text-align: center;
+            /*background: red;*/
+            /*border: 1px dashed;*/
+        }
+
+        .item-image {
+            height: 100%;
+            /*max-width: 100%;*/
+        }
+
+        .name {
+            text-align: center;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .description {
+            height: 51px;
+            font-size: 12px;
+        }
+
+        .tag {
+            float: left;
+            background: limegreen;
+            border-radius: 5px;
+            margin: 0 5px 5px 0;
+            padding: 0 5px;
+            color: #d8ffbe;
+        }
+
+        .tag a {
+            text-decoration: none;
+            color: #d8ffbe;
+            cursor: pointer;
+        }
+
+        .gs-btn {
+            background: limegreen;
+            color: #d8ffbe;
+        }
+
+        .gs-btn:hover {
+            background: inherit;
+            color: #333;
+        }
+
+        .alert-info {
+            background: limegreen;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -63,8 +132,8 @@
         </div>
         <nav class="collapse navbar-collapse">
             <ul class="nav navbar-nav" ng-show="loaded && curStateName()!='login'">
-            <li>
-                    <a ui-sref="faq">
+                <li>
+                <a ui-sref="faq">
                         <span class="glyphicon glyphicon-paperclip"></span>
                         <span translate="faq"></span>
                     </a>

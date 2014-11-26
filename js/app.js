@@ -1,8 +1,8 @@
 var myApp = angular.module('giftApp', ['ui.router', 'restangular', 'pascalprecht.translate']);
 
-var storageCheckAuth = function ($q, $state, Restangular) {
+var storageCheckAuth = function ($q, $rootScope, $state, Restangular) {
     var defered = $q.defer();
-    var EndPoint = Restangular.all('welcome');
+    var EndPoint = Restangular.all('api');
 
     function reject() {
         defered.reject();
@@ -11,10 +11,11 @@ var storageCheckAuth = function ($q, $state, Restangular) {
         $state.go('login');
     }
 
-    EndPoint.customGET('empty_').then(function (response) {
-        if (response.error == 'not logged') {
+    EndPoint.customGET('get_status').then(function (response) {
+        if (response.status == 'not logged') {
             reject();
         } else {
+            $rootScope.spent = response.status == 'spent';
             defered.resolve(true);
         }
     }, function () {
@@ -73,6 +74,17 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             'content': {
                 templateUrl: 'js/product.html',
                 controller: 'ProductViewCtrl'
+            }
+        },
+        resolve: {
+            factory: storageCheckAuth
+        }
+    }).state('order', {
+        url: '/order?product_id',
+        views: {
+            'content': {
+                templateUrl: 'js/order.html',
+                controller: 'OrderCtrl'
             }
         },
         resolve: {
@@ -147,7 +159,9 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         'we are the best': 'We are the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best of the best.',
         'products': 'Products:',
         'measures': 'Measures:',
-        'categories': 'Categories:'
+        'categories': 'Categories:',
+        'ordering completed': 'Ordering successfully completed:',
+        'your choice': 'Your choice:'
     });
     $translateProvider.translations('ru', {
         'brand caption': 'Umasterov Gift',
@@ -161,7 +175,9 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         'we are the best': 'Мы лучшие из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших  из лучших.',
         'products': 'Продукты:',
         'measures': 'Мероприятия:',
-        'categories': 'Категории:'
+        'categories': 'Категории:',
+        'ordering completed': 'Оформление заказа успешно завершено',
+        'your choice': 'Вы выбрали:'
     });
     $translateProvider.preferredLanguage('ru');
 }).factory('UtilsSrv', ['$state', function ($state) {
@@ -193,7 +209,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         return value + (tail || ' …');
     };
 }).controller('LoginCtrl', ['$rootScope', '$scope', '$http', '$state', '$timeout', 'Restangular', function ($rootScope, $scope, $http, $state, $timeout, Restangular) {
-    var EndPoint = Restangular.all('welcome');
+    var EndPoint = Restangular.all('api');
     $rootScope.isLogged = false;
     $scope.loaded = true;
 
@@ -204,7 +220,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     }
 
     function login(token) {
-        if (token && token.length >= 6) {
+        if (token && token.length >= 16) {
             EndPoint.customPOST({sert_identifier: token}, 'login').then(function (response) {
                 if (response.status == 'ok') {
                     var authToken = response.auth_token;
@@ -229,7 +245,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         login(window.localStorage.authToken);
     }
 }]).controller('ShowcaseCtrl', ['$rootScope', '$scope', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, Restangular, UtilsSrv) {
-    var EndPoint = Restangular.all('welcome');
+    var EndPoint = Restangular.all('api');
 
     var loadedCheckCount = 3;
     var loadedCheck = function () {
@@ -264,7 +280,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         loadedCheck();
     });
 }]).controller('ProductsListCtrl', ['$rootScope', '$scope', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, Restangular, UtilsSrv) {
-    var EndPoint = Restangular.all('welcome');
+    var EndPoint = Restangular.all('api');
 
     var loadedCheckCount = 1;
     var loadedCheck = function () {
@@ -281,7 +297,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         loadedCheck();
     });
 }]).controller('ProductViewCtrl', ['$rootScope', '$scope', '$stateParams', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, $stateParams, Restangular, UtilsSrv) {
-    var EndPoint = Restangular.all('welcome');
+    var EndPoint = Restangular.all('api');
 
     EndPoint.customGET('product/' + $stateParams.id).then(function (response) {
         UtilsSrv.responseCheckAuth(response);
@@ -291,8 +307,29 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         alert('err');
         $rootScope.loaded = true;
     });
+}]).controller('OrderCtrl', ['$rootScope', '$scope', '$stateParams', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, $stateParams, Restangular, UtilsSrv) {
+    var EndPoint = Restangular.all('api');
+
+    EndPoint.customGET('product/' + $stateParams.product_id).then(function (response) {
+        UtilsSrv.responseCheckAuth(response);
+        $scope.product = response.product;
+        $rootScope.loaded = true;
+    }, function () {
+        alert('err');
+        $rootScope.loaded = true;
+    });
+
+    $scope.sendOrder = function () {
+        EndPoint.customPOST({product_id: $stateParams.product_id, client: $scope.client}, 'order').then(function (response) {
+            if (response.status == 'ok') {
+                $rootScope.spent = true;
+            }
+        }, function () {
+            alert('err');
+        })
+    };
 }]).controller('CategoryViewCtrl', ['$rootScope', '$scope', '$stateParams', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, $stateParams, Restangular, UtilsSrv) {
-    var EndPoint = Restangular.all('welcome');
+    var EndPoint = Restangular.all('api');
 
     var loadedCheckCount = 2;
     var loadedCheck = function () {
@@ -318,7 +355,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         loadedCheck();
     });
 }]).controller('MeasureViewCtrl', ['$rootScope', '$scope', '$stateParams', 'Restangular', 'UtilsSrv', function ($rootScope, $scope, $stateParams, Restangular, UtilsSrv) {
-    var EndPoint = Restangular.all('welcome');
+    var EndPoint = Restangular.all('api');
 
     var loadedCheckCount = 2;
     var loadedCheck = function () {
@@ -343,17 +380,25 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         alert('err');
         loadedCheck();
     });
-}]).controller('FaqCtrl', ['$rootScope', '$scope', '$location', '$stateParams', '$anchorScroll', function ($rootScope, $scope, $location, $stateParams, $anchorScroll) {
-    $anchorScroll();
+}]).controller('FaqCtrl', ['$rootScope', '$scope', '$location', '$stateParams', '$timeout', '$anchorScroll', function ($rootScope, $scope, $location, $stateParams, $timeout, $anchorScroll) {
     $rootScope.loaded = true;
+    $timeout(function () {
+        $anchorScroll();
+    });
 }]).run(['$rootScope', '$http', '$state', '$translate', 'Restangular', function ($rootScope, $http, $state, $translate, Restangular) {
     var authToken = window.localStorage.authToken;
     Restangular.setDefaultRequestParams({Authorization: 'Bearer ' + authToken});
 //    $http.defaults.headers.common.Authorization = 'Bearer ' + authToken;
 //    Restangular.setDefaultHeaders({'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/x-www-form-urlencoded'});
 
+    $rootScope.spent = false;
+
     $rootScope.curStateName = function () {
         return $state.$current.name;
+    };
+
+    $rootScope.go = function (to, params) {
+        return $state.go(to, params);
     };
 
     $rootScope.logout = function () {

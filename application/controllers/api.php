@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller
+class Api extends CI_Controller
 {
 
     /**
@@ -40,25 +40,36 @@ class Welcome extends CI_Controller
         return;
     }
 
-    public function empty_()
+    public function order()
     {
-        $this->checkAuth();
-        echo json_encode(array());
-        return;
+        $data = json_decode(file_get_contents("php://input"));
+        $this->load->model('orders_model');
+        $success = $this->orders_model->create_order($this->getToken(), $data->product_id, $data->client);
+        if ($success) {
+            $response['status'] = 'ok';
+            echo json_encode($response);
+            return;
+        } else {
+            echo json_encode(array('error' => 'failed order creation'));
+        }
     }
 
-    public function checkAuth()
+    private function getToken()
+    {
+        return substr($this->input->get('Authorization'), 7);
+    }
+
+    public function get_status()
     {
         $this->load->model('sessions_model');
-
-//        $headers = $this->input->request_headers();
-//        $authorization = $headers['Authorization'];
         $authorization = $this->input->get('Authorization');
-
-        if (!isset($authorization) || $authorization == null || empty($authorization) || !$this->sessions_model->isActual(substr($authorization, 7))) {
-            echo json_encode(array('error' => 'not logged'));
+        $status = $this->sessions_model->getStatus($this->getToken());
+        if (!isset($authorization) || $authorization == null || empty($authorization) || $status == 'not logged') {
+            echo json_encode(array('status' => 'not logged'));
             die;
         }
+        echo json_encode(array('status' => $status));
+        die;
     }
 
     public function products()
@@ -69,6 +80,20 @@ class Welcome extends CI_Controller
         $this->load->model('products_model');
         echo json_encode(array('products' => $this->products_model->get_list($categoryId, $measureId)));
         return;
+    }
+
+    public function checkAuth()
+    {
+        $this->load->model('sessions_model');
+
+//        $headers = $this->input->request_headers();
+//        $authorization = $headers['Authorization'];
+
+        $authorization = $this->input->get('Authorization');
+        if (!isset($authorization) || $authorization == null || empty($authorization) || $this->sessions_model->getStatus($this->getToken()) == 'not logged') {
+            echo json_encode(array('error' => 'not logged'));
+            die;
+        }
     }
 
     public function product($id)
@@ -125,5 +150,5 @@ class Welcome extends CI_Controller
 
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file api.php */
+/* Location: ./application/controllers/api.php */

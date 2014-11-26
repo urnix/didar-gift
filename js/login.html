@@ -13,17 +13,13 @@
         text-align: center;
     }
 
-    .login-form-container .alert {
-        background: limegreen;
-        color: #ffffff;
-    }
 </style>
 
 <div class="login-form-container clearfix">
     <form ng-show="!isLogged">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="{{'certificate id'|translate}}"
-                   ng-model="sertId"/>
+                   ng-model="sertId" maxlength="16"/>
         </div>
     </form>
     <div class="alert alert-info text-center" ng-show="isLogged" translate="login successful"></div>

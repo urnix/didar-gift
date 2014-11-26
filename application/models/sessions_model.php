@@ -5,7 +5,7 @@ class Sessions_model extends CI_Model
 
     public function login($sert_identifier)
     {
-        $result_array = $this->db->query("SELECT id FROM @certificates WHERE sert_identifier = '$sert_identifier' AND paid_up = 1")->result_array();
+        $result_array = $this->db->query("SELECT id FROM @certificates WHERE sert_identifier = '$sert_identifier' AND status = 'paid'")->result_array();
         $certExist = count($result_array);
         if ($certExist) {
             $sertId = $result_array[0]['id'];
@@ -34,16 +34,21 @@ class Sessions_model extends CI_Model
         return $randomString;
     }
 
-    public function isActual($token)
+    public function getStatus($token)
     {
         $this->db->query("DELETE FROM @sessions WHERE expiration_time < NOW()");
-        $result_array = $this->db->query("SELECT sert_id FROM @sessions WHERE token = '$token'")->result_array();
-        $sessionExist = count($result_array);
-        if ($sessionExist) {
+        $result_array = $this->db->query("SELECT s.sert_id, (SELECT 1 FROM @certificates c WHERE c.id = s.sert_id AND c.status != 'paid' ) is_spent FROM @sessions s WHERE s.token = '$token'")->result_array();
+        if (count($result_array)) {
             $sertId = $result_array[0]['sert_id'];
             $this->db->query("UPDATE @sessions SET expiration_time = TIMESTAMPADD(MINUTE, 15, NOW()) WHERE sert_id = $sertId");
+            if ($result_array[0]['is_spent'] == 1) {
+                return 'spent';
+            } else {
+                return 'active';
+            }
+        } else {
+            return 'not logged';
         }
-        return $sessionExist;
     }
 
 }
