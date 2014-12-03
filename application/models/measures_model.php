@@ -11,7 +11,7 @@ class Measures_model extends CI_Model
 
     public function get_one($id)
     {
-        $query = $this->db->query("SELECT c.id, c.name, c.description FROM @measures c WHERE c.id = $id");
+        $query = $this->db->query("SELECT m.id, m.name, m.description, i.path img FROM @measures m, @images i WHERE m.image_id = i.id AND m.id = $id");
         $result_array = $query->result_array();
         $measure = $result_array[0];
         return $measure;

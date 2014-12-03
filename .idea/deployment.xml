@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="uma_gift" uploadOnCheckin="d6ce1706-fb47-4b5c-afc8-15fb748597b3">
+  <component name="PublishConfigData" serverName="uma_gift">
     <serverData>
       <paths name="uma_gift">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
-            <excludedPath local="true" path="$PROJECT_DIR$/db" />
-            <excludedPath local="true" path="$PROJECT_DIR$/node_modules" />
-          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="uma_gift" />
   </component>
 </project>
-

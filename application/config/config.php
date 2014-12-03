@@ -14,7 +14,6 @@
 | path to your installation.
 |
 */
-$config['base_url'] = '';
 $config['base_url'] = "http://" . $_SERVER['HTTP_HOST'] . "/gift";
 
 /*
@@ -181,7 +180,7 @@ $config['directory_trigger'] = 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 1;
+$config['log_threshold'] = 0;
 
 /*
 |--------------------------------------------------------------------------

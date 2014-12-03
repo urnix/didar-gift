@@ -15,7 +15,7 @@ class Products_model extends CI_Model
             $extraFrom .= ', @products_measures pm ';
             $extraWhere .= "AND pm.product_id = p.id AND pm.measure_id = $measureId ";
         }
-        $sql = "SELECT p.id, p.name, p.description, i.path img FROM @products p, @images i, @products_images pi " . $extraFrom . "WHERE pi.product_id = p.id AND pi.image_id = i.id AND pi.is_primary = 1 " . $extraWhere . "LIMIT 6";
+        $sql = "SELECT p.id, p.name, p.description, i.path img FROM @products p, @images i, @products_images pi " . $extraFrom . "WHERE pi.product_id = p.id AND p.active = 1 AND pi.image_id = i.id AND pi.is_primary = 1 " . $extraWhere . "LIMIT 6";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

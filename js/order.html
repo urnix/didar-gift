@@ -5,7 +5,7 @@
 </style>
 
 <div class="clearfix" ng-hide="spent">
-<h2 translate="your choice"></h2>
+    <h2 translate="your choice"></h2>
 
     <div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-4">
         <img ng-src="{{product.img}}"/>
@@ -22,8 +22,7 @@
     <h2>Введите адрес для доставки:</h2>
 
     <form class="form-horizontal col-xs-12 col-md-offset-2 col-md-8" name="orderForm" id="orderForm"
-          ng-submit="sendOrder()"
-          novalidate>
+          ng-submit="sendOrder()" novalidate>
         <label for="name" class="col-sm-3 control-label">Фамилия и имя:</label>
 
         <div class="col-sm-9 form-group">
@@ -45,8 +44,7 @@
             <input class="form-control" type="email" ng-model="client.email" name="email" required/>
         </div>
         <button class="gs-btn btn btn-success col-xs-offset-4 col-xs-4" type="submit"
-                ng-disabled="spent || orderForm.$invalid">
-            Сохранить
+                ng-disabled="spent || orderForm.$invalid" translate="approve">
         </button>
     </form>
 </div>

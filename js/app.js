@@ -161,7 +161,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         'measures': 'Measures:',
         'categories': 'Categories:',
         'ordering completed': 'Ordering successfully completed:',
-        'your choice': 'Your choice:'
+        'your choice': 'Your choice:',
+        'approve': 'Approve'
     });
     $translateProvider.translations('ru', {
         'brand caption': 'Umasterov Gift',
@@ -177,7 +178,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         'measures': 'Мероприятия:',
         'categories': 'Категории:',
         'ordering completed': 'Оформление заказа успешно завершено',
-        'your choice': 'Вы выбрали:'
+        'your choice': 'Вы выбрали:',
+        'approve': 'Подтвердить'
     });
     $translateProvider.preferredLanguage('ru');
 }).factory('UtilsSrv', ['$state', function ($state) {
