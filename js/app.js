@@ -32,7 +32,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/login',
         views: {
             'content': {
-                templateUrl: 'js/login.html',
+                templateUrl: 'templates/login.html',
                 controller: 'LoginCtrl'
             }
         }
@@ -40,7 +40,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/showcase',
         views: {
             'content': {
-                templateUrl: 'js/showcase.html',
+                templateUrl: 'templates/showcase.html',
                 controller: 'ShowcaseCtrl'
             }
         },
@@ -51,7 +51,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/products',
         views: {
             'content': {
-                templateUrl: 'js/empty.html'
+                templateUrl: 'templates/empty.html'
             }
         },
         resolve: {
@@ -61,7 +61,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/list',
         views: {
             'content': {
-                templateUrl: 'js/products.html',
+                templateUrl: 'templates/products.html',
                 controller: 'ProductsListCtrl'
             }
         },
@@ -72,7 +72,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/view/:id',
         views: {
             'content': {
-                templateUrl: 'js/product.html',
+                templateUrl: 'templates/product.html',
                 controller: 'ProductViewCtrl'
             }
         },
@@ -83,7 +83,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/order?product_id',
         views: {
             'content': {
-                templateUrl: 'js/order.html',
+                templateUrl: 'templates/order.html',
                 controller: 'OrderCtrl'
             }
         },
@@ -94,7 +94,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/categories',
         views: {
             'content': {
-                templateUrl: 'js/empty.html'
+                templateUrl: 'templates/empty.html'
             }
         },
         resolve: {
@@ -105,7 +105,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'content': {
                 controller: 'CategoryViewCtrl',
-                templateUrl: 'js/category.html'
+                templateUrl: 'templates/category.html'
             }
         },
         resolve: {
@@ -115,7 +115,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/measures',
         views: {
             'content': {
-                templateUrl: 'js/empty.html'
+                templateUrl: 'templates/empty.html'
             }
         },
         resolve: {
@@ -126,7 +126,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'content': {
                 controller: 'MeasureViewCtrl',
-                templateUrl: 'js/measure.html'
+                templateUrl: 'templates/measure.html'
             }
         },
         resolve: {
@@ -136,7 +136,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/faq',
         views: {
             'content': {
-                templateUrl: 'js/faq.html',
+                templateUrl: 'templates/faq.html',
                 controller: 'FaqCtrl'
             }
         },
@@ -145,7 +145,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         }
     });
 }).config(function (RestangularProvider, $translateProvider) {
-    RestangularProvider.setBaseUrl('/gift');
+    RestangularProvider.setBaseUrl('/didar-api');
 
     $translateProvider.translations('en', {
         'brand caption': 'Umasterov Gift',

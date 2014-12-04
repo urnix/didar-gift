@@ -2,37 +2,235 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9595ad5e-f287-4861-a1e3-fc91012245f0" name="Default" comment="Added API for Cert site and DB content (measures ans test products).">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/defender_of_fatherland_day.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/p1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/p2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/p3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/p4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/p5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/p6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/valentines_day.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/womens_day.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/cert_orders_model.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/certapi.php" />
-      <change type="DELETED" beforePath="D:\pr\gift\.idea\gift.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imgs/birthday.jpg" afterPath="$PROJECT_DIR$/imgs/birthday.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="DELETED" beforePath="D:\pr\gift\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\cache\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\cache\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\autoload.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\config.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\constants.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\database.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\doctypes.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\foreign_chars.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\hooks.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\migration.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\mimes.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\profiler.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\routes.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\smileys.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\config\user_agents.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\controllers\api.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\controllers\certapi.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\controllers\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\core\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\errors\error_404.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\errors\error_db.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\errors\error_general.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\errors\error_php.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\errors\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\helpers\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\hooks\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\language\english\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\language\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\libraries\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\logs\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\logs\log-2014-11-26.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\models\categories_model.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\models\cert_orders_model.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\models\certificates_model.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\models\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\models\measures_model.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\models\orders_model.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\models\products_model.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\models\sessions_model.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\third_party\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\views\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\application\views\welcome_message.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\db\gift.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\birthday.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\defender_of_fatherland_day.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\food.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\home_appliance.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\new_year.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\p1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\p2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\p3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\p4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\p5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\p6.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\sushi.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\tv.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\valentines_day.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\wedding.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\imgs\womens_day.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\index.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Benchmark.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\CodeIgniter.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Common.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Config.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Exceptions.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Hooks.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Input.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Loader.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Model.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Output.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Router.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Security.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\URI.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\Utf8.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\core\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\DB.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\DB_active_rec.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\DB_cache.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\DB_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\DB_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\DB_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\DB_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\cubrid\cubrid_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\cubrid\cubrid_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\cubrid\cubrid_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\cubrid\cubrid_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\cubrid\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mssql\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mssql\mssql_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mssql\mssql_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mssql\mssql_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mssql\mssql_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysql\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysql\mysql_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysql\mysql_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysql\mysql_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysql\mysql_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysqli\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysqli\mysqli_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysqli\mysqli_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysqli\mysqli_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\mysqli\mysqli_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\oci8\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\oci8\oci8_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\oci8\oci8_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\oci8\oci8_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\oci8\oci8_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\odbc\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\odbc\odbc_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\odbc\odbc_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\odbc\odbc_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\odbc\odbc_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\pdo\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\pdo\pdo_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\pdo\pdo_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\pdo\pdo_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\pdo\pdo_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\postgre\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\postgre\postgre_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\postgre\postgre_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\postgre\postgre_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\postgre\postgre_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlite\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlite\sqlite_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlite\sqlite_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlite\sqlite_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlite\sqlite_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlsrv\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlsrv\sqlsrv_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlsrv\sqlsrv_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlsrv\sqlsrv_result.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\drivers\sqlsrv\sqlsrv_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\database\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\fonts\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\fonts\texb.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\array_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\captcha_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\cookie_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\date_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\directory_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\download_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\email_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\file_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\form_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\html_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\inflector_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\language_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\number_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\path_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\security_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\smiley_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\string_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\text_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\typography_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\url_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\helpers\xml_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\calendar_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\date_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\db_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\email_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\form_validation_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\ftp_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\imglib_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\migration_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\number_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\profiler_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\unit_test_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\english\upload_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\language\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Cache\Cache.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Cache\drivers\Cache_apc.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Cache\drivers\Cache_dummy.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Cache\drivers\Cache_file.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Cache\drivers\Cache_memcached.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Cache\drivers\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Cache\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Calendar.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Cart.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Driver.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Email.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Encrypt.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Form_validation.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Ftp.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Image_lib.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Javascript.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Log.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Migration.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Pagination.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Parser.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Profiler.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Session.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Sha1.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Table.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Trackback.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Typography.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Unit_test.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Upload.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\User_agent.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Xmlrpc.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Xmlrpcs.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\Zip.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\javascript\Jquery.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\pr\gift\system\libraries\javascript\index.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/categories_model.php" afterPath="$PROJECT_DIR$/application/models/categories_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/category.html" afterPath="$PROJECT_DIR$/js/category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/config.php" afterPath="$PROJECT_DIR$/application/config/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/gift.sql" afterPath="$PROJECT_DIR$/db/gift.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/measures_model.php" afterPath="$PROJECT_DIR$/application/models/measures_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/order.html" afterPath="$PROJECT_DIR$/js/order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/product.html" afterPath="$PROJECT_DIR$/js/product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/products_model.php" afterPath="$PROJECT_DIR$/application/models/products_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/welcome_message.php" afterPath="$PROJECT_DIR$/application/views/welcome_message.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\pr\gift\js\category.html" afterPath="$PROJECT_DIR$/templates/category.html" />
+      <change type="MOVED" beforePath="D:\pr\gift\js\empty.html" afterPath="$PROJECT_DIR$/templates/empty.html" />
+      <change type="MOVED" beforePath="D:\pr\gift\js\faq.html" afterPath="$PROJECT_DIR$/templates/faq.html" />
+      <change type="MOVED" beforePath="D:\pr\gift\js\login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
+      <change type="MOVED" beforePath="D:\pr\gift\js\measure.html" afterPath="$PROJECT_DIR$/templates/measure.html" />
+      <change type="MOVED" beforePath="D:\pr\gift\js\order.html" afterPath="$PROJECT_DIR$/templates/order.html" />
+      <change type="MOVED" beforePath="D:\pr\gift\js\product.html" afterPath="$PROJECT_DIR$/templates/product.html" />
+      <change type="MOVED" beforePath="D:\pr\gift\js\products.html" afterPath="$PROJECT_DIR$/templates/products.html" />
+      <change type="MOVED" beforePath="D:\pr\gift\js\showcase.html" afterPath="$PROJECT_DIR$/templates/showcase.html" />
     </list>
     <ignored path="gift.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,31 +255,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="products_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/products_model.php">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="714">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="1428">
+              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="measures_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/measures_model.php">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="459">
-              <caret line="7" column="141" selection-start-line="7" selection-start-column="141" selection-end-line="7" selection-end-column="141" />
+            <state vertical-scroll-proportion="0.5950704" vertical-offset="3623" max-vertical-offset="7140">
+              <caret line="233" column="41" selection-start-line="233" selection-start-column="41" selection-end-line="233" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gift.sql" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/gift.sql">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5311419" vertical-offset="5779" max-vertical-offset="6732">
-              <caret line="358" column="40" selection-start-line="358" selection-start-column="40" selection-end-line="358" selection-end-column="40" />
+            <state vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="136">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -112,13 +310,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/order.html" />
-        <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/application/controllers/cert-api.php" />
         <option value="$PROJECT_DIR$/application/controllers/certapi.php" />
         <option value="$PROJECT_DIR$/application/models/cert_orders_model.php" />
         <option value="$PROJECT_DIR$/application/models/products_model.php" />
         <option value="$PROJECT_DIR$/application/models/measures_model.php" />
         <option value="$PROJECT_DIR$/db/gift.sql" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/js/app.js" />
       </list>
     </option>
   </component>
@@ -140,10 +341,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="307" />
+    <option name="width" value="1613" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -259,117 +459,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="didar-gift" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gift" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="didar-gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imgs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="didar-gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="didar-gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="didar-gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="didar-gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="third_party" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="didar-gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="didar-gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gift" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -387,7 +491,7 @@
     <property name="options.lastSelected" value="reference.settings.php.debug.xdebug.proxy" />
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cert" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/package.json" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
@@ -404,9 +508,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pr\gift" />
       <recent name="D:\pr\gift\application\models" />
       <recent name="D:\pr\gift\application\controllers" />
-      <recent name="D:\pr\gift" />
       <recent name="D:\pr\gift\js" />
       <recent name="D:\pr\gift/css" />
     </key>
@@ -497,7 +601,7 @@
       <workItem from="1417445595223" duration="1928000" />
       <workItem from="1417452676795" duration="5359000" />
       <workItem from="1417633790382" duration="4335000" />
-      <workItem from="1417643714128" duration="997000" />
+      <workItem from="1417643714128" duration="3682000" />
     </task>
     <task id="LOCAL-00001" summary="Added API for Cert site and DB content (measures ans test products).">
       <created>1417644699757</created>
@@ -505,11 +609,17 @@
       <option name="project" value="LOCAL" />
       <updated>1417644699757</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added API for Cert site and DB content (measures ans test products).">
+      <created>1417644767932</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1417644767932</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12881000" />
+    <option name="totallyTimeSpent" value="15566000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -532,7 +642,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="307" y="0" width="1613" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31675676" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -543,12 +653,13 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.5003934" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34983498" sideWeight="0.4996066" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33081082" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.330033" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291228" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24040511" sideWeight="0.5456546" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19059885" sideWeight="0.5456546" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13528337" sideWeight="0.4532453" order="2" side_tool="true" content_ui="tabs" />
@@ -561,7 +672,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30549452" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34395605" sideWeight="0.4996066" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32637364" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -621,13 +731,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/system/core/Common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3076925" vertical-offset="8268" max-vertical-offset="10048">
-          <caret line="496" column="0" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/opt/easyphp14/modules/pma/js/get_scripts.js.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1242">
@@ -646,27 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.1538463" vertical-offset="27" max-vertical-offset="11565">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08717949" vertical-offset="0" max-vertical-offset="619">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/Input.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="12869" max-vertical-offset="14450">
-          <caret line="757" column="12" selection-start-line="757" selection-start-column="12" selection-end-line="757" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03119266" vertical-offset="2329" max-vertical-offset="3996">
-          <caret line="138" column="5" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -691,13 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/logs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/phrase.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="7.6220202" vertical-offset="0" max-vertical-offset="6817">
@@ -712,45 +787,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="881">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/empty.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/measure.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="561">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/products.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/products.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/faq.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="799">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -761,73 +801,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/showcase.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="935">
-          <caret line="8" column="73" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.346154" vertical-offset="477" max-vertical-offset="1054">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/database/DB_driver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.653846" vertical-offset="6132" max-vertical-offset="24055">
-          <caret line="377" column="9" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/certificates_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26516464" vertical-offset="0" max-vertical-offset="577">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/opt/easyphp14/modules/pma/tbl_sql.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32409012" vertical-offset="0" max-vertical-offset="969">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/database/DB_active_rec.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.730769" vertical-offset="24286" max-vertical-offset="34850">
-          <caret line="1445" column="13" selection-start-line="1445" selection-start-column="13" selection-end-line="1445" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.230769" vertical-offset="284" max-vertical-offset="867">
-          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/CodeIgniter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5979" max-vertical-offset="6919">
-          <caret line="370" column="40" selection-start-line="370" selection-start-column="40" selection-end-line="370" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/sessions_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="1037">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="561">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -838,27 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/categories_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="459">
-          <caret line="13" column="153" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="680">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="714">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="544">
@@ -866,119 +822,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1836">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="425">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.47486034" vertical-offset="0" max-vertical-offset="537">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42932862" vertical-offset="743" max-vertical-offset="1309">
-          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="1428">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/libraries/Image_lib.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45207956" vertical-offset="10698" max-vertical-offset="26214">
-          <caret line="644" column="49" selection-start-line="644" selection-start-column="49" selection-end-line="644" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="6256">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/welcome_message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1428">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="22" />
+        <state vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="136">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5183" max-vertical-offset="7140">
-          <caret line="323" column="0" selection-start-line="323" selection-start-column="0" selection-end-line="331" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2703">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="54" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1836">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="986">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/cert_orders_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="340">
-          <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/certapi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="51" max-vertical-offset="969">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/orders_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="544">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/products_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="714">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/measures_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="459">
-          <caret line="7" column="141" selection-start-line="7" selection-start-column="141" selection-end-line="7" selection-end-column="141" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/gift.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5311419" vertical-offset="5779" max-vertical-offset="6732">
-          <caret line="358" column="40" selection-start-line="358" selection-start-column="40" selection-end-line="358" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.5950704" vertical-offset="3623" max-vertical-offset="7140">
+          <caret line="233" column="41" selection-start-line="233" selection-start-column="41" selection-end-line="233" selection-end-column="41" />
           <folding />
         </state>
       </provider>

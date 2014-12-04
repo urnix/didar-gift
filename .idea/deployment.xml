@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="uma_gift">
+  <component name="PublishConfigData" serverName="uma_gift" uploadOnCheckin="09cce01a-5150-4868-bb35-d3a865561ba5">
     <serverData>
       <paths name="uma_gift">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.gitignore" />
+            <excludedPath local="true" path="$PROJECT_DIR$/bower.json" />
+            <excludedPath local="true" path="$PROJECT_DIR$/gulpfile.js" />
+            <excludedPath local="true" path="$PROJECT_DIR$/package.json" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="uma_gift" />
   </component>
 </project>
